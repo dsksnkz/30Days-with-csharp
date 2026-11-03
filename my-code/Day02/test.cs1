@@ -1,0 +1,11 @@
+const double PoundsPerKg = 2.20462;
+
+Console.Write("Weight in kg: ");
+double kg = double.Parse(Console.ReadLine()!);
+
+double pounds = kg * PoundsPerKg;
+
+Console.WriteLine($"{kg} kg is {pounds:F2} pounds.");
+// F2 prints decimal to 2 decimal places
+
+

@@ -1,0 +1,49 @@
+﻿// IF ELSE comparing
+
+int age = 15;
+if (age < 13)
+{
+	Console.WriteLine("Kiddo");
+}
+else if (age < 18)
+{
+	Console.WriteLine("Teenagrr");
+}
+else
+{
+	Console.WriteLine("Adult");
+}
+
+//SWITCH comparing
+
+string command = "start"
+
+switch (command)
+{
+	case "start":
+		Console.WriteLine("Starting");
+		break;
+	case "stop":
+		Console.WriteLine("Stopping");
+		break;
+	default:
+		Console.WriteLine("Unkown Command");
+		break;
+}
+
+// variable command is created with type "string".
+// switch compares (command), case compares command to "start", break ends the case.
+// default is like an else, if nothing is compared above, use the default initialization
+
+int age = 15;
+
+// the string "ticket" is result of: [age compared to switch]
+
+string ticket = age switch
+{
+	< 13 => "Child ticket"
+	// age is smaller than 13, => is just arrow that points to result
+	< 65 => "Adult ticket"
+	_ => "Senior ticket"
+	// _ means anything else. / else.
+};
