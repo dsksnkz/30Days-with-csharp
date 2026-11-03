@@ -10,3 +10,9 @@ data = json.dumps(docs).replace("</", "<\\/")
 nav = "".join(f'<a href="#{n.lower()}">{label}</a>' for n, label in PAGES)
 template = Path("site/template.html").read_text()
 Path("site/index.html").write_text(template.replace("{{NAV}}", nav).replace("{{DATA}}", data))
+
+# GitHub Pages serves docs/ and needs a full document.
+head = '<!doctype html>\n<html lang="en">\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n<style>body { margin: 0; }</style>\n'
+Path("docs").mkdir(exist_ok=True)
+Path("docs/.nojekyll").touch()
+Path("docs/index.html").write_text(head + Path("site/index.html").read_text())
