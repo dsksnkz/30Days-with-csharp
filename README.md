@@ -28,19 +28,7 @@ Work through these in order:
 
 ## If the computer has no .NET
 
-You can run most exercises in a browser at [dotnetfiddle.net](https://dotnetfiddle.net). If it asks for a `Main` method, put your code inside this:
-
-```csharp
-using System;
-
-class Program
-{
-    static void Main()
-    {
-        // your code goes here
-    }
-}
-```
+See [ONLINE.md](ONLINE.md) to run your code in a browser.
 
 If you can't get online either, write the code on paper and trace it by hand. It's great practice.
 
