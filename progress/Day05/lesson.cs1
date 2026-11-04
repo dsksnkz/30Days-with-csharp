@@ -1,0 +1,54 @@
+﻿// Methods
+// A method is a reuseable block of code, or a function.
+
+PrintDouble(5);
+
+Greet("Sam");
+
+int total = Add(2, 3);  //adds two integers, in this case 2+3 = 5 (later written)
+Console.WriteLine(total);
+
+void Greet(string name)
+{
+	Console.WriteLine($"Hi {name}");
+}
+
+int Add(int a, int b)
+{
+	return a + b;
+}
+
+print("hello world");
+
+void print(string statement)
+{
+	Console.WriteLine(statement);
+}
+
+
+// PRINTING AND RETURNING. Printing prints the results, a more temp solutioon
+// returning gives the result to the method.
+
+void PrintDouble(int n)
+{
+	Console.WriteLine(n * 2); // only prints.
+}
+
+int GetDouble(int n)
+{
+	return n * 2;
+}
+
+int result = GetDouble(5) + 1;  // 5 times 2, because getdouble is used, the
+							   // `n` in this case is the 5. then (5*2) + 1 = 11.
+
+void Say(string text, int times = 1)
+{
+	for (int i = 0; i < times; i++)
+	{
+		Console.WriteLine(text);
+	}
+}
+
+Say("Hi");
+Say("Hi", 3);

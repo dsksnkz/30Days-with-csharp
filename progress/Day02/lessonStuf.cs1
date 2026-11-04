@@ -1,0 +1,24 @@
+﻿var score = 10;
+// var is a changeable variable, C# also auto assigns this as integer
+
+const double Pi = 3.14159;
+// constant is unchangeable variable, double is a decimal, Pi is the name
+
+string? input = Console.ReadLine();
+//asks input from console as a string.
+
+double number = double.Parse(input!);
+//number with datatype: "double" (decimal)  is the "input" converted with `Parse`. ! tells compiler to compile and its not null.
+// null is something that dosent allocate into the memory.
+
+int whole = 5;
+double d = whole;
+//safe cuz no decimal behind
+
+
+int cut = (int)3.9;
+// "cast" cuts off the decimal part. this would be 3
+// (int) does the casting, it converts 3.9 into a straight int
+
+Console.WriteLine(7 / 2) // will be 3
+Console.WriteLine(7.0 / 2) // will be 3.5 because 7.0 is assigned as "double" / decimal.

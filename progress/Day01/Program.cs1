@@ -1,0 +1,12 @@
+﻿// ; after every line
+
+
+Console.WriteLine("Hello, World!");
+//default print command
+
+string? name = Console.ReadLine();
+//? determines datatype, name is the variable name, console readline reads the console input
+
+Console.WriteLine($"Nice to meet you, {name}!");
+//default print command again, $ is like (f"{}{}") in python, lets not just string but other variables to print like {name}.
+
