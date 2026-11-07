@@ -8,11 +8,11 @@ A 30-day C# course, built to work with no AI help. Plan on 1–2 hours a day.
 
 | File | What it's for |
 |---|---|
-| [REVISION.md](REVISION.md) | Start here: quiz on Days 1–3, with answers |
+| [SETUP.md](SETUP.md) | Install .NET on Windows, macOS or Linux |
+| [REVISION.md](REVISION.md) | Quiz on Days 1–3, with answers |
 | [WEEK1.md](WEEK1.md) | Full lessons for Days 4–7 |
 | [ROADMAP.md](ROADMAP.md) | Goals, key ideas and exercises for Days 8–30 |
 | [ERRORS.md](ERRORS.md) | What common compiler errors mean and how to fix them |
-| [REWARDS.md](REWARDS.md) | Points and rewards |
 | [my-code/](my-code/) | The code you've written so far |
 
 ## Getting stuck without AI
@@ -28,15 +28,19 @@ Work through these in order:
 
 ## If the computer has no .NET
 
-See [ONLINE.md](ONLINE.md) to run your code in a browser.
+See [SETUP.md](SETUP.md) to install it, or [ONLINE.md](ONLINE.md) to run your code in a browser.
 
 If you can't get online either, write the code on paper and trace it by hand. It's great practice.
 
 ## Starting each day
 
 ```bash
-cd ~ && dotnet new console -o Day04 && cd Day04
+dotnet new console -o Day04
+cd Day04
+dotnet run
 ```
+
+These commands work in Windows PowerShell, macOS and Linux.
 
 Only one file in a project can have top-level code. Rename old experiments so they don't end in `.cs`, or use a new project.
 
@@ -47,20 +51,21 @@ Only one file in a project can have top-level code. Rename old experiments so th
 3. **Test:** run every test value, especially the boundaries.
 4. **Break it (10 min):** change something, read the error, and fix it.
 5. **Answer the check-yourself questions** from memory.
-6. **Log it:** add your points in [REWARDS.md](REWARDS.md).
 
 ## Saving your work
 
 Copy your project into `my-code/` first, then run this from the repo folder:
 
 ```bash
-git add . && git commit -m "Finish Day 4" && git push
+git add .
+git commit -m "Finish Day 4"
+git push
 ```
 
 To get this repo on another computer:
 
 ```bash
-gh repo clone dsksnkz/30Days-with-csharp
+git clone https://github.com/dsksnkz/30Days-with-csharp
 ```
 
 ## The plan
