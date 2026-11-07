@@ -2,8 +2,8 @@
 import json
 from pathlib import Path
 
-PAGES = [("README", "Start"), ("REVISION", "Revision"), ("WEEK1", "Week 1"),
-         ("ROADMAP", "Roadmap"), ("ERRORS", "Errors"), ("REWARDS", "Rewards"), ("ONLINE", "Run online")]
+PAGES = [("README", "Start"), ("SETUP", "Setup"), ("REVISION", "Revision"), ("WEEK1", "Week 1"),
+         ("ROADMAP", "Roadmap"), ("ERRORS", "Errors"), ("ONLINE", "Run online")]
 
 docs = {name.lower(): Path(f"{name}.md").read_text() for name, _ in PAGES}
 data = json.dumps(docs).replace("</", "<\\/")

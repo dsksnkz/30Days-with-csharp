@@ -324,4 +324,4 @@ No new topics today. You're combining everything, without a walkthrough.
 - Ask whether to play again.
 - Allow only numbers 1–4 for multiple-choice answers, and ask again for anything else.
 
-**Well done: that's Week 1. Check [REWARDS.md](REWARDS.md) for your milestone reward.**
+**Well done: that's Week 1.**

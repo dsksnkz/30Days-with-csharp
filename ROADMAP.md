@@ -80,7 +80,7 @@ var cheap = products.Where(p => p.Price < 10).OrderBy(p => p.Name).ToList();
 **Day 20: Advanced LINQ.** Learn `GroupBy`, `Join`, `Sum`, `Average`, `Max` and `Count`.
 **Build:** a sales report showing total per category, best seller and average order.
 
-**Day 21: Project: expense tracker.** Add, list and delete expenses, with totals per category. Save to JSON with `System.Text.Json` and `File.WriteAllText`, and load it on startup. Close the program, reopen it, and check that the data is still there. This is also a good time to build your rewards tracker.
+**Day 21: Project: expense tracker.** Add, list and delete expenses, with totals per category. Save to JSON with `System.Text.Json` and `File.WriteAllText`, and load it on startup. Close the program, reopen it, and check that the data is still there.
 
 ## Week 4: Professional tools
 
@@ -111,4 +111,4 @@ var cheap = products.Where(p => p.Price < 10).OrderBy(p => p.Name).ToList();
 
 **Day 30: Ship it.** Add logging and configuration, run `dotnet publish`, write a good README, and push it to GitHub.
 
-**That's the course. Claim your Day 30 prize!**
+**That's the course. Well done!**
