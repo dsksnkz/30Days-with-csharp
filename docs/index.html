@@ -2,48 +2,63 @@
 <html lang="en">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<style>body { margin: 0; }</style>
 <title>30 Days with C#</title>
 <meta name="claude:viewport-fit-sides" content="cover">
+<meta name="theme-color" content="#16131f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2034%2034%22%3E%3Cpolygon%20points%3D%2217%2C1%2031%2C9%2031%2C25%2017%2C33%203%2C25%203%2C9%22%20fill%3D%22%23512bd4%22/%3E%3Cpolygon%20points%3D%2217%2C1%2031%2C9%2031%2C25%2017%2C17%22%20fill%3D%22%239b4f96%22/%3E%3Ctext%20x%3D%2217%22%20y%3D%2222%22%20text-anchor%3D%22middle%22%20font-family%3D%22sans-serif%22%20font-size%3D%2212%22%20font-weight%3D%22800%22%20fill%3D%22%23ffffff%22%3EC%26%2335%3B%3C/text%3E%3C/svg%3E">
 <style>
-/* One narrow reading column under a plain row of links. */
+/* Shared design for the 30-day courses. Only the brand colours in :root change per course. */
 :root {
-  --bg: #15161a; --fg: #d9dadf; --dim: #8b8e99; --line: #2c2e36;
-  --code: #1e2026; --link: #9db8e8;
+  --bg: #16131f; --line: #2e2a3d; --code: #1f1b2b; --code-fg: #d6cbf7; --brand-1: #512bd4; --brand-2: #9b4f96; --accent: #b9a4ff; --link: #a894ff;
+  --fg: #dcdde3; --dim: #8d909c;
   --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --mono: ui-monospace, "JetBrains Mono", "Cascadia Code", Menlo, Consolas, monospace;
   color-scheme: dark;
 }
-body { background: var(--bg); color: var(--fg); font: 16px/1.65 var(--sans); }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.65 var(--sans); }
+body::before { content: ""; display: block; height: 4px; background: linear-gradient(90deg, var(--brand-1), var(--brand-2)); }
 #wrap {
-  max-width: 46rem; margin: 0 auto; padding-block: 1rem 5rem;
+  max-width: 46rem; margin: 0 auto; padding-block: 1.25rem 5rem;
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
 }
-nav { display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; padding-bottom: .75rem; border-bottom: 1px solid var(--line); }
-nav a { color: var(--dim); text-decoration: none; }
+header { display: flex; align-items: center; gap: .65rem; margin-bottom: .9rem; }
+header svg { width: 34px; height: 34px; flex: none; }
+header a { color: #f3f4f7; font-weight: 700; font-size: 1.1rem; text-decoration: none; letter-spacing: .01em; }
+nav { display: flex; flex-wrap: wrap; gap: .3rem 1.25rem; padding-bottom: .75rem; border-bottom: 1px solid var(--line); }
+nav a { color: var(--dim); text-decoration: none; padding-bottom: 2px; border-bottom: 2px solid transparent; }
 nav a:hover { color: var(--fg); }
-nav a.on { color: var(--fg); font-weight: 600; }
-a { color: var(--link); }
-a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
-h1, h2, h3 { line-height: 1.25; color: #f1f2f5; text-wrap: balance; }
-h1 { font-size: 1.75rem; margin: 2rem 0 1rem; }
-h2 { font-size: 1.3rem; margin: 2.25rem 0 .75rem; }
+nav a.on { color: var(--accent); font-weight: 600; border-bottom-color: var(--brand-2); }
+a { color: var(--link); text-underline-offset: 2px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+h1, h2, h3 { line-height: 1.25; color: #f3f4f7; text-wrap: balance; }
+h1 { font-size: 1.75rem; margin: 2rem 0 1rem; padding-bottom: .4rem; border-bottom: 2px solid var(--brand-1); }
+h2 { font-size: 1.3rem; margin: 2.25rem 0 .75rem; color: var(--accent); }
 h3 { font-size: 1.05rem; margin: 1.5rem 0 .5rem; }
 p, ul, ol { margin: 0 0 1rem; }
 ul, ol { padding-left: 1.5rem; }
 li { margin-bottom: .25rem; }
+li::marker { color: var(--accent); }
+strong { color: #f3f4f7; }
 hr { border: 0; border-top: 1px solid var(--line); margin: 3rem 0; }
-code { font: .9em var(--mono); background: var(--code); padding: .1em .3em; border-radius: 3px; }
-pre { background: var(--code); padding: .85rem 1rem; overflow-x: auto; border-radius: 4px; margin: 0 0 1rem; line-height: 1.5; }
-pre code { background: none; padding: 0; font-size: .875rem; }
+code { font: .9em var(--mono); background: var(--code); color: var(--code-fg); padding: .1em .3em; border-radius: 3px; }
+pre { background: var(--code); border-left: 3px solid var(--brand-1); padding: .85rem 1rem; overflow-x: auto; border-radius: 4px; margin: 0 0 1rem; line-height: 1.5; }
+pre code { background: none; color: var(--fg); padding: 0; font-size: .875rem; }
 .table { overflow-x: auto; margin: 0 0 1rem; }
 table { border-collapse: collapse; width: 100%; font-size: .9375rem; }
 th, td { text-align: left; vertical-align: top; padding: .45rem .75rem .45rem 0; border-bottom: 1px solid var(--line); }
-th { color: var(--dim); font-weight: 600; }
-li > input { margin-right: .4rem; }
+th { color: var(--accent); font-weight: 600; border-bottom-color: var(--brand-1); }
+li > input { margin-right: .4rem; accent-color: var(--brand-1); }
 </style>
 <div id="wrap">
+  <header>
+    <svg viewBox="0 0 34 34" aria-hidden="true">
+      <polygon points="17,1 31,9 31,25 17,33 3,25 3,9" fill="var(--brand-1)"/>
+      <polygon points="17,1 31,9 31,25 17,17" fill="var(--brand-2)" opacity=".85"/>
+      <text x="17" y="21.5" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#ffffff">C#</text>
+    </svg>
+    <a href="#readme">30 Days with C#</a>
+  </header>
   <nav><a href="#readme">Start</a><a href="#setup">Setup</a><a href="#revision">Revision</a><a href="#week1">Week 1</a><a href="#roadmap">Roadmap</a><a href="#errors">Errors</a><a href="#online">Run online</a></nav>
   <main id="doc"></main>
 </div>
@@ -68,8 +83,8 @@ function show(page) {
   main.querySelectorAll("a[href]").forEach(a => {
     const href = a.getAttribute("href");
     const md = href.match(/^([A-Za-z0-9]+)\.md$/);
-    if (md) a.setAttribute("href", "#" + md[1].toLowerCase());
-    else if (!/^https?:/.test(href)) a.setAttribute("href", repo + href);
+    if (md && docs[md[1].toLowerCase()]) a.setAttribute("href", "#" + md[1].toLowerCase());
+    else if (!/^(https?:|#)/.test(href)) a.setAttribute("href", repo + href);
   });
 
   document.querySelectorAll("nav a").forEach(a =>
