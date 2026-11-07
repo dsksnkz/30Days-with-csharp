@@ -1,44 +1,60 @@
-<title>30 Days with C#</title>
+<title>{{TITLE}}</title>
 <meta name="claude:viewport-fit-sides" content="cover">
+<meta name="theme-color" content="{{BG}}">
+<link rel="icon" href="data:image/svg+xml,{{ICON}}">
 <style>
-/* One narrow reading column under a plain row of links. */
+/* Shared design for the 30-day courses. Only the brand colours in :root change per course. */
 :root {
-  --bg: #15161a; --fg: #d9dadf; --dim: #8b8e99; --line: #2c2e36;
-  --code: #1e2026; --link: #9db8e8;
+  {{THEME}}
+  --fg: #dcdde3; --dim: #8d909c;
   --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --mono: ui-monospace, "JetBrains Mono", "Cascadia Code", Menlo, Consolas, monospace;
   color-scheme: dark;
 }
-body { background: var(--bg); color: var(--fg); font: 16px/1.65 var(--sans); }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.65 var(--sans); }
+body::before { content: ""; display: block; height: 4px; background: linear-gradient(90deg, var(--brand-1), var(--brand-2)); }
 #wrap {
-  max-width: 46rem; margin: 0 auto; padding-block: 1rem 5rem;
+  max-width: 46rem; margin: 0 auto; padding-block: 1.25rem 5rem;
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
 }
-nav { display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; padding-bottom: .75rem; border-bottom: 1px solid var(--line); }
-nav a { color: var(--dim); text-decoration: none; }
+header { display: flex; align-items: center; gap: .65rem; margin-bottom: .9rem; }
+header svg { width: 34px; height: 34px; flex: none; }
+header a { color: #f3f4f7; font-weight: 700; font-size: 1.1rem; text-decoration: none; letter-spacing: .01em; }
+nav { display: flex; flex-wrap: wrap; gap: .3rem 1.25rem; padding-bottom: .75rem; border-bottom: 1px solid var(--line); }
+nav a { color: var(--dim); text-decoration: none; padding-bottom: 2px; border-bottom: 2px solid transparent; }
 nav a:hover { color: var(--fg); }
-nav a.on { color: var(--fg); font-weight: 600; }
-a { color: var(--link); }
-a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
-h1, h2, h3 { line-height: 1.25; color: #f1f2f5; text-wrap: balance; }
-h1 { font-size: 1.75rem; margin: 2rem 0 1rem; }
-h2 { font-size: 1.3rem; margin: 2.25rem 0 .75rem; }
+nav a.on { color: var(--accent); font-weight: 600; border-bottom-color: var(--brand-2); }
+a { color: var(--link); text-underline-offset: 2px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+h1, h2, h3 { line-height: 1.25; color: #f3f4f7; text-wrap: balance; }
+h1 { font-size: 1.75rem; margin: 2rem 0 1rem; padding-bottom: .4rem; border-bottom: 2px solid var(--brand-1); }
+h2 { font-size: 1.3rem; margin: 2.25rem 0 .75rem; color: var(--accent); }
 h3 { font-size: 1.05rem; margin: 1.5rem 0 .5rem; }
 p, ul, ol { margin: 0 0 1rem; }
 ul, ol { padding-left: 1.5rem; }
 li { margin-bottom: .25rem; }
+li::marker { color: var(--accent); }
+strong { color: #f3f4f7; }
 hr { border: 0; border-top: 1px solid var(--line); margin: 3rem 0; }
-code { font: .9em var(--mono); background: var(--code); padding: .1em .3em; border-radius: 3px; }
-pre { background: var(--code); padding: .85rem 1rem; overflow-x: auto; border-radius: 4px; margin: 0 0 1rem; line-height: 1.5; }
-pre code { background: none; padding: 0; font-size: .875rem; }
+code { font: .9em var(--mono); background: var(--code); color: var(--code-fg); padding: .1em .3em; border-radius: 3px; }
+pre { background: var(--code); border-left: 3px solid var(--brand-1); padding: .85rem 1rem; overflow-x: auto; border-radius: 4px; margin: 0 0 1rem; line-height: 1.5; }
+pre code { background: none; color: var(--fg); padding: 0; font-size: .875rem; }
 .table { overflow-x: auto; margin: 0 0 1rem; }
 table { border-collapse: collapse; width: 100%; font-size: .9375rem; }
 th, td { text-align: left; vertical-align: top; padding: .45rem .75rem .45rem 0; border-bottom: 1px solid var(--line); }
-th { color: var(--dim); font-weight: 600; }
-li > input { margin-right: .4rem; }
+th { color: var(--accent); font-weight: 600; border-bottom-color: var(--brand-1); }
+li > input { margin-right: .4rem; accent-color: var(--brand-1); }
 </style>
 <div id="wrap">
+  <header>
+    <svg viewBox="0 0 34 34" aria-hidden="true">
+      <polygon points="17,1 31,9 31,25 17,33 3,25 3,9" fill="var(--brand-1)"/>
+      <polygon points="17,1 31,9 31,25 17,17" fill="var(--brand-2)" opacity=".85"/>
+      <text x="17" y="21.5" text-anchor="middle" font-family="system-ui, sans-serif" font-size="{{BADGE_SIZE}}" font-weight="800" fill="{{BADGE_FG}}">{{BADGE}}</text>
+    </svg>
+    <a href="#readme">{{TITLE}}</a>
+  </header>
   <nav>{{NAV}}</nav>
   <main id="doc"></main>
 </div>
@@ -47,7 +63,7 @@ li > input { margin-right: .4rem; }
 <script>
 const docs = JSON.parse(document.getElementById("docs").textContent);
 const main = document.getElementById("doc");
-const repo = "https://github.com/dsksnkz/30Days-with-csharp/tree/main/";
+const repo = "{{REPO}}/tree/main/";
 
 function show(page) {
   if (!docs[page]) page = "readme";
@@ -63,8 +79,8 @@ function show(page) {
   main.querySelectorAll("a[href]").forEach(a => {
     const href = a.getAttribute("href");
     const md = href.match(/^([A-Za-z0-9]+)\.md$/);
-    if (md) a.setAttribute("href", "#" + md[1].toLowerCase());
-    else if (!/^https?:/.test(href)) a.setAttribute("href", repo + href);
+    if (md && docs[md[1].toLowerCase()]) a.setAttribute("href", "#" + md[1].toLowerCase());
+    else if (!/^(https?:|#)/.test(href)) a.setAttribute("href", repo + href);
   });
 
   document.querySelectorAll("nav a").forEach(a =>
