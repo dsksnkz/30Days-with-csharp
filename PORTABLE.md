@@ -7,7 +7,7 @@ You need internet once, to download .NET. The download is about 300 MB, and it u
 ## 1. Get the folder
 
 1. On the [repo page](https://github.com/dsksnkz/30Days-with-csharp), click **Code → Download ZIP**.
-2. Open the zip and copy the **`portable`** folder somewhere you can write to, for example your Desktop, `Documents` or a USB stick.
+2. Open the zip and copy the whole **`portable`** folder somewhere you can write to, for example your Desktop, `Documents` or a USB stick.
 
 Avoid paths with `&` or `!` in them. Spaces are fine.
 
@@ -70,7 +70,6 @@ Use this once you get to projects with more than one file (Week 2 onwards).
 | `get-dotnet.bat` | Downloads .NET into `dotnet\`. Run it once. |
 | `run.bat` | Opens `code.cs` in Notepad and runs it each time you press a key |
 | `terminal.bat` | Opens a command window where `dotnet` works |
-| `env.bat` | Settings the others share. You don't run it yourself. |
 | `template.cs` | The starter code a new `code.cs` begins with |
 | `dotnet\` | .NET itself, made by `get-dotnet.bat` |
 | `home\` | .NET's settings and cache, kept here instead of on the laptop |
@@ -92,7 +91,8 @@ Get the **Binaries** zip, not the Installer. The installer needs admin rights.
 
 | Problem | What it means |
 |---|---|
-| `.NET isn't in this folder yet` | `portable\dotnet\dotnet.exe` is missing. Run `get-dotnet.bat`, or follow the steps above. |
+| `.NET isn't next to this file` | The `dotnet` folder isn't beside `run.bat`. Keep all the files together in one folder, with `dotnet.exe` at `dotnet\dotnet.exe`. |
+| `'dotnet' is not recognized` | You have an old copy of `run.bat`. Download the folder again. |
 | "This app has been blocked by your system administrator" | The laptop doesn't allow programs outside Program Files. Use [ONLINE.md](ONLINE.md) instead. |
 | `Unrecognized command or argument 'code.cs'` | The SDK is older than .NET 10. Delete `dotnet\` and run `get-dotnet.bat` again. |
 | Antivirus deletes `dotnet.exe` | It's a false alarm. Ask whoever runs the laptop, or use [ONLINE.md](ONLINE.md). |

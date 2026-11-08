@@ -31,7 +31,15 @@ if not exist "dotnet\dotnet.exe" goto failed
 del dotnet-sdk.zip
 
 echo.
-call "%~dp0env.bat"
+rem Use the .NET in this folder. Nothing is installed on the laptop.
+set "DOTNET_ROOT=%~dp0dotnet"
+set "PATH=%~dp0dotnet;%PATH%"
+set "DOTNET_CLI_HOME=%~dp0home"
+set "NUGET_PACKAGES=%~dp0home\nuget"
+set "DOTNET_CLI_TELEMETRY_OPTOUT=1"
+set "DOTNET_NOLOGO=1"
+set "DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1"
+set "DOTNET_MULTILEVEL_LOOKUP=0"
 dotnet --version
 echo.
 echo Done. Double-click run.bat to start coding.

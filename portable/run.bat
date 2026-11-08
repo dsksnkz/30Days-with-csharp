@@ -2,7 +2,15 @@
 setlocal
 cd /d "%~dp0"
 title C# runner
-call "%~dp0env.bat"
+rem Use the .NET in this folder. Nothing is installed on the laptop.
+set "DOTNET_ROOT=%~dp0dotnet"
+set "PATH=%~dp0dotnet;%PATH%"
+set "DOTNET_CLI_HOME=%~dp0home"
+set "NUGET_PACKAGES=%~dp0home\nuget"
+set "DOTNET_CLI_TELEMETRY_OPTOUT=1"
+set "DOTNET_NOLOGO=1"
+set "DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1"
+set "DOTNET_MULTILEVEL_LOOKUP=0"
 
 if not exist "dotnet\dotnet.exe" goto nodotnet
 
@@ -21,11 +29,14 @@ echo  Then press any key here to run it. Close this window to stop.
 pause >nul
 echo.
 echo ================ running %NAME% ================
-dotnet run "%FILE%"
+"%~dp0dotnet\dotnet.exe" run "%FILE%"
 echo ================ finished ================
 goto loop
 
 :nodotnet
-echo .NET isn't in this folder yet. Double-click get-dotnet.bat first.
+echo .NET isn't next to this file. run.bat needs a folder called dotnet
+echo in the same place, with dotnet.exe inside it:
+echo   %~dp0dotnet\dotnet.exe
+echo Double-click get-dotnet.bat in this folder to download it.
 pause
 exit /b 1
