@@ -76,6 +76,30 @@ Use this once you get to projects with more than one file (Week 2 onwards).
 
 To remove it all, delete the folder. The only things left behind on the laptop are a few temporary build files in Windows' temp folder.
 
+## Another way: install for your account only
+
+This puts .NET in your own user folder instead of Program Files, so it needs no admin rights. Afterwards `dotnet` works in any terminal, the course commands work exactly as written, and VS Code can find it.
+
+1. Open PowerShell and run Microsoft's install script. It's slow, often 10–20 minutes, and shows little while it works. Wait until your prompt comes back.
+
+```powershell
+powershell -ExecutionPolicy Bypass -c "& ([scriptblock]::Create((iwr -UseBasicParsing https://dot.net/v1/dotnet-install.ps1))) -Channel 10.0 -InstallDir $env:LOCALAPPDATA\dotnet"
+```
+
+2. Add it to your account's `PATH`:
+
+```powershell
+[Environment]::SetEnvironmentVariable('Path', "$env:LOCALAPPDATA\dotnet;" + [Environment]::GetEnvironmentVariable('Path','User'), 'User')
+```
+
+3. **Close every Terminal window,** not just the tab, and open a new one. Then check:
+
+```powershell
+dotnet --version
+```
+
+If `dotnet` still isn't found, run `& "$env:LOCALAPPDATA\dotnet\dotnet.exe" --version`. If that prints a version, only the `PATH` step is missing. If that shows nothing either, the laptop is blocking it. Use [ONLINE.md](ONLINE.md).
+
 ## If get-dotnet.bat fails
 
 Download the zip yourself:
