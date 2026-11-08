@@ -10,7 +10,7 @@ if /i "%PROCESSOR_ARCHITECTURE%"=="ARM64" set "ARCH=arm64"
 if /i "%PROCESSOR_ARCHITEW6432%"=="ARM64" set "ARCH=arm64"
 set "URL=https://aka.ms/dotnet/10.0/dotnet-sdk-win-%ARCH%.zip"
 
-echo Downloading the .NET 10 SDK for %ARCH%. It is about 250 MB, so this can take a while.
+echo Downloading the .NET 10 SDK for %ARCH%. It is about 300 MB.
 echo.
 del dotnet-sdk.zip 2>nul
 curl.exe -L --fail -o dotnet-sdk.zip "%URL%"
@@ -22,7 +22,8 @@ if errorlevel 1 (
 if not exist dotnet-sdk.zip goto failed
 
 echo.
-echo Unpacking...
+echo Unpacking. This writes thousands of small files and can take 10 minutes or more.
+echo Leave this window open until it says Done.
 mkdir dotnet 2>nul
 tar -xf dotnet-sdk.zip -C dotnet 2>nul
 if not exist "dotnet\dotnet.exe" powershell -NoProfile -Command "Expand-Archive -Force 'dotnet-sdk.zip' 'dotnet'"

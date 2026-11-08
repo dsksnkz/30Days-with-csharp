@@ -2,7 +2,7 @@
 
 Use this on a Windows laptop where you **can't install .NET**. The whole C# compiler lives in one folder, which can be on the laptop or on a USB stick. It needs no admin rights and installs nothing.
 
-You need internet once, to download .NET (about 250 MB). After that, everything works offline.
+You need internet once, to download .NET. The download is about 300 MB, and it unpacks to roughly 1 GB of space. After that, everything works offline.
 
 ## 1. Get the folder
 
@@ -11,9 +11,13 @@ You need internet once, to download .NET (about 250 MB). After that, everything 
 
 Avoid paths with `&` or `!` in them. Spaces are fine.
 
+The laptop's own drive is much faster than a USB stick. Use a USB stick only if you need to carry the setup between computers.
+
 ## 2. Download .NET into it (once)
 
 Double-click **`get-dotnet.bat`**. It downloads the .NET 10 SDK and unpacks it into `portable\dotnet\`. When it prints a version number like `10.0.100`, it's done.
+
+**This step is slow, often 10–20 minutes.** The download is only part of it. Unpacking writes thousands of small files, and Windows Defender scans each one as it lands. On a USB stick it can take even longer. Leave the window open until it says `Done`. You only do this once.
 
 If Windows says **"Windows protected your PC"**, click **More info → Run anyway**. That shows up for any script that came from the internet.
 
