@@ -12,7 +12,7 @@ COLORS = {
     "bg": "#16131f", "line": "#2e2a3d", "code": "#1f1b2b", "code-fg": "#d6cbf7",
     "brand-1": "#512bd4", "brand-2": "#9b4f96", "accent": "#b9a4ff", "link": "#a894ff",
 }
-PAGES = [("README", "Start"), ("SETUP", "Setup"), ("REVISION", "Revision"), ("WEEK1", "Week 1"),
+PAGES = [("README", "Start"), ("SETUP", "Setup"), ("PORTABLE", "Portable"), ("REVISION", "Revision"), ("WEEK1", "Week 1"),
          ("ROADMAP", "Roadmap"), ("ERRORS", "Errors"), ("ONLINE", "Run online")]
 
 theme = " ".join(f"--{k}: {v};" for k, v in COLORS.items())
