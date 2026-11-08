@@ -14,6 +14,8 @@ Or download the SDK installer from [dotnet.microsoft.com/download](https://dotne
 
 Close and reopen Terminal afterwards.
 
+**Not allowed to install?** Use the portable version in [PORTABLE.md](PORTABLE.md). It runs from a folder or USB stick with no admin rights.
+
 ## macOS
 
 ```bash

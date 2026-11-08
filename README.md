@@ -9,6 +9,7 @@ A 30-day C# course, built to work with no AI help. Plan on 1–2 hours a day.
 | File | What it's for |
 |---|---|
 | [SETUP.md](SETUP.md) | Install .NET on Windows, macOS or Linux |
+| [PORTABLE.md](PORTABLE.md) | Run C# on a Windows laptop where you can't install anything |
 | [REVISION.md](REVISION.md) | Quiz on Days 1–3, with answers |
 | [WEEK1.md](WEEK1.md) | Full lessons for Days 4–7 |
 | [ROADMAP.md](ROADMAP.md) | Goals, key ideas and exercises for Days 8–30 |
@@ -28,7 +29,7 @@ Work through these in order:
 
 ## If the computer has no .NET
 
-See [SETUP.md](SETUP.md) to install it, or [ONLINE.md](ONLINE.md) to run your code in a browser.
+See [SETUP.md](SETUP.md) to install it. If you can't install anything on a Windows laptop, use the portable version in [PORTABLE.md](PORTABLE.md). You can also run your code in a browser with [ONLINE.md](ONLINE.md).
 
 If you can't get online either, write the code on paper and trace it by hand. It's great practice.
 
