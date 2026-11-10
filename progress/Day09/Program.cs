@@ -1,8 +1,10 @@
 ﻿// object oriented programming DAY09
-Console.Clear();
+// Console.Clear();
 
 BankAccount acc1 = new BankAccount(300.00m); // tells Compiler using the 'BankAccount' blueprint create
 BankAccount acc2 = new BankAccount(20.00m);	 // a 'new' variable 'acc1'.
+
+
 acc1.Name = "acc1" ;
 acc2.Name = "acc2" ;
 
@@ -12,6 +14,8 @@ acc2.Spend(30.00m);
 
 Console.WriteLine($"   acc1 balance: {acc1.GetBalance()}");
 Console.WriteLine($"   acc2 balance: {acc2.GetBalance()}");
+
+
 
 class BankAccount // new datatype called 'BankAccount'
 {
@@ -46,5 +50,4 @@ class BankAccount // new datatype called 'BankAccount'
 	{
 		return balance;
 	}
-
 }
